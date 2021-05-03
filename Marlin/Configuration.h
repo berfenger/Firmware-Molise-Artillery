@@ -90,7 +90,7 @@
 
 /*** Section 1 Artillery Printer ***/
 
-//#define GENIUS
+#define GENIUS
 //#define X1
 
 /*** Section 2 Board Type ***/
@@ -101,7 +101,7 @@
 //#define SKR14           // Choose this if you are using BigTreeTech SKR 1.4
 //#define SKR14T          // Choose this if you are using BigTreeTech SKR 1.4 Turbo
 //#define MKSSGENLV1      // Choose this if you are using MKS SGEN L V1
-//#define MKSSGENLV2      // Choose this if you are using MKS SGEN L V2
+#define MKSSGENLV2      // Choose this if you are using MKS SGEN L V2
 //#define MKSROBINNANOV3  // Choose this if you are using MKS ROBIN NANO V3
 
 
@@ -118,7 +118,7 @@
 
 /*** Section 3 Extruder Type ***/
 
-//#define TITAN       // Stock Extruder
+#define TITAN       // Stock Extruder
 //#define BMG         // Choose this if you are using BMG/BMG Wind
 //#define HEMERA      // Choose this if you are using HEMERA
 //#define MATRIX      // Choose this if you are using MATRIX
@@ -130,15 +130,15 @@
 //#define TMC_2209_STA    // Standalone Mode
 //#define LV_8729
 //#define TMC_2208        // UART Mode
-//#define TMC_2209        // UART Mode
+#define TMC_2209        // UART Mode
 
 /*** Section 5 Bed Leveling ***/
 
-//#define BLTOUCH      //uncomment if you use a BLTouch
+#define BLTOUCH      //uncomment if you use a BLTouch
   #ifdef BLTOUCH
     #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
     #define Z_MIN_PROBE_REPEATABILITY_TEST
-    #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }   //Offset preset for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
+    #define NOZZLE_TO_PROBE_OFFSET { 29, -33, 0 }   //Offset preset for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
   //#define NOZZLE_TO_PROBE_OFFSET { -17, -42, 0 }  //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4741530
   //#define NOZZLE_TO_PROBE_OFFSET { 56, -34, 0 }   //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4548854
   //#define NOZZLE_TO_PROBE_OFFSET { 36, -38, 0 }   //Offset preset for BMG Wind for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
@@ -173,13 +173,17 @@
 
 //#define GraphicalLCD                              // Will work next to MKS TFT
 #define MKSGENL_TFT                               // To be activated if you have deported the TFT connection to EXP1 on the MKS Gen L ==> communication speed : 250000
+
+// BFG enable fil runout sens
 //#define FILAMENT_RUNOUT_SENSOR                    // If you connect your filament runout sensor to the motherboard instead of the TFT
 //#define NEOPIXEL_PERSO                            // If you want to use a personal Neopixel LED on the Neopixel Port
 //#define LED_PORT_NEOPIXEL                         // If you want to use a personal Neopixel LED on the original LED Port
 
+// BFG enable fil runout sens
+//#define FIL_RUNOUT_PIN P1_28
 /*** Section 7 Sensorless Homing XY ***/
 
-//#define SENSHOME                                  // Active sensorless homing ONLY for TMC 2208 UART and 2009 UART with SKR 1.3 (extra wiring needed) and SKR 1.4 (no extra wiring needed)
+#define SENSHOME                                  // Active sensorless homing ONLY for TMC 2208 UART and 2009 UART with SKR 1.3 (extra wiring needed) and SKR 1.4 (no extra wiring needed)
 
 
 
@@ -319,7 +323,7 @@
       #define MOTHERBOARD BOARD_MKS_SGEN_L
   #endif
   #ifdef MKSSGENLV2
-      #define MOTHERBOARD BOARD_MKS_SGEN_L_V2            1151  // MKS GEN L V2
+      #define MOTHERBOARD BOARD_MKS_SGEN_L_V2            //1151  // MKS GEN L V2
   #endif
   #ifdef MKSGENLV21
       #define MOTHERBOARD BOARD_MKS_GEN_L_V21
@@ -705,9 +709,9 @@
     #define DEFAULT_Ki_LIST {   1.14,   1.14 }
     #define DEFAULT_Kd_LIST {  46.57,  46.57 }
   #else
-    #define DEFAULT_Kp  14.58
-    #define DEFAULT_Ki   1.14
-    #define DEFAULT_Kd  46.57
+    #define DEFAULT_Kp  21.1867
+    #define DEFAULT_Ki   2.1720
+    #define DEFAULT_Kd  51.6664
   #endif
 #endif // PIDTEMP
 
@@ -745,9 +749,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
  // Sidewinder X1
-  #define DEFAULT_bedKp 244.21
-  #define DEFAULT_bedKi 45.87
-  #define DEFAULT_bedKd 325.08
+  #define DEFAULT_bedKp 41.9075
+  #define DEFAULT_bedKi 3.4261
+  #define DEFAULT_bedKd 341.7415
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -940,7 +944,7 @@
 #define Z_DRIVER_TYPE  drivertype
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-#define Z2_DRIVER_TYPE drivertype
+//#define Z2_DRIVER_TYPE drivertype
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #define E0_DRIVER_TYPE drivertype
@@ -1008,9 +1012,9 @@
     #define eSteps 335   //MATRIX
 #endif
 #ifdef TITAN
-    #define eSteps 431   //STOCK
+    #define eSteps 425.5   //STOCK
 #endif
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.13, 80.18, 402.5, eSteps }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, eSteps }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1057,7 +1061,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 8.0
   #define DEFAULT_YJERK 8.0
@@ -2986,12 +2990,20 @@
   #define RGB_LED_B_PIN 6
   #define RGB_LED_W_PIN -1
 #endif
-#if ENABLED(MKSSGENLV1) || ENABLED(MKSSGENLV2)    // Using this method : https://artillery.n3t.ro/img/MKS_SGEN_L/pin-map.png
+#if ENABLED(MKSSGENLV1) || (ENABLED(MKSSGENLV2) && ENABLED(X1))   // Using this method : https://artillery.n3t.ro/img/MKS_SGEN_L/pin-map.png
   
   #define RGB_LED
   #define RGB_LED_R_PIN P3_26
   #define RGB_LED_G_PIN P1_26
   #define RGB_LED_B_PIN P3_25
+  #define RGB_LED_W_PIN -1
+#endif
+#if ENABLED(MKSSGENLV2) && ENABLED(GENIUS)
+  
+  #define RGB_LED
+  #define RGB_LED_R_PIN P1_20
+  #define RGB_LED_G_PIN P1_19
+  #define RGB_LED_B_PIN P1_21
   #define RGB_LED_W_PIN -1
 #endif
 #if ENABLED(TOUCH_MI_LED) && DISABLED(MKSGENL) && ENABLED(X1)

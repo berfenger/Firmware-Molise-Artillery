@@ -213,14 +213,14 @@
   #endif
 #else
   #ifndef FAN2_PIN
-    #define FAN2_PIN                       P2_06  // HE1 for FAN3
+    #define FAN2_PIN                       P1_04  // HE1 for FAN3 P2_06
   #endif
 #endif
 #ifndef FAN_PIN
-  #define FAN_PIN                          P2_04  // FAN1
+  #define FAN_PIN                          P2_04  // FAN1 P2_04
 #endif
 #ifndef FAN1_PIN
-  #define FAN1_PIN                         P1_04  // FAN2
+  #define FAN1_PIN                         P2_06  // FAN2 P1_04
 #endif
 
 //
