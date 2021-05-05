@@ -138,7 +138,7 @@
   #ifdef BLTOUCH
     #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
     #define Z_MIN_PROBE_REPEATABILITY_TEST
-    #define NOZZLE_TO_PROBE_OFFSET { 29, -33, 0 }   //Offset preset for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
+    #define NOZZLE_TO_PROBE_OFFSET { 29, -33, -4.07 }   //Offset preset for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
   //#define NOZZLE_TO_PROBE_OFFSET { -17, -42, 0 }  //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4741530
   //#define NOZZLE_TO_PROBE_OFFSET { 56, -34, 0 }   //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4548854
   //#define NOZZLE_TO_PROBE_OFFSET { 36, -38, 0 }   //Offset preset for BMG Wind for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
@@ -1128,8 +1128,8 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 8.0
-  #define DEFAULT_YJERK 8.0
+  #define DEFAULT_XJERK 7.0
+  #define DEFAULT_YJERK 7.0
   #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
