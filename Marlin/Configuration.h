@@ -142,8 +142,8 @@
   //#define NOZZLE_TO_PROBE_OFFSET { -17, -42, 0 }  //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4741530
   //#define NOZZLE_TO_PROBE_OFFSET { 56, -34, 0 }   //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4548854
   //#define NOZZLE_TO_PROBE_OFFSET { 36, -38, 0 }   //Offset preset for BMG Wind for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
-  #define WAGGSTER_MOD_WIRING                     //Comment if you don't use Waggster mode on Sidewinder (Guero Loco method by exemple) Mod needed for Genius standard wiring
-  #define Z_STEPPER_AUTO_ALIGN                    //Uncomment if you want to use Z_STEPPER_AUTO_ALIGN, be carefull, you need to remove the belt from the Z axes for this
+  //#define WAGGSTER_MOD_WIRING                     //Comment if you don't use Waggster mode on Sidewinder (Guero Loco method by exemple) Mod needed for Genius standard wiring
+  //#define Z_STEPPER_AUTO_ALIGN                    //Uncomment if you want to use Z_STEPPER_AUTO_ALIGN, be carefull, you need to remove the belt from the Z axes for this
   //#define DISABLE_LED                             // Uncomment to disable LED, some users report compatibilty issues with BL Touch and LED enabled
   #endif
 
@@ -724,17 +724,17 @@
     //#define DEFAULT_Ki   2.1720
     //#define DEFAULT_Kd  51.6664
     // new triangle lab parts (copper heatblock)
-    //#define DEFAULT_Kp  20.1682
-    //#define DEFAULT_Ki   1.5126
-    //#define DEFAULT_Kd  67.2281
+    #define DEFAULT_Kp  20.1682
+    #define DEFAULT_Ki   1.5126
+    #define DEFAULT_Kd  67.2281
     // new E3D parts (copper heatblock)
     //#define DEFAULT_Kp  31.4924
     //#define DEFAULT_Ki   2.9639
     //#define DEFAULT_Kd  83.6557
     // new E3D parts (copper heatblock, copper nozzle)
-    #define DEFAULT_Kp  34.8357
-    #define DEFAULT_Ki   3.2693
-    #define DEFAULT_Kd  92.7980
+    // #define DEFAULT_Kp  34.8357
+    // #define DEFAULT_Ki   3.2693
+    // #define DEFAULT_Kd  92.7980
     // new E3D parts (alum trianglelab heatblock)
     //#define DEFAULT_Kp  23.5959
     //#define DEFAULT_Ki   1.9901
@@ -951,7 +951,7 @@
 #endif
 #if defined(BLTOUCH) || defined(TOUCH_MI_PROBE)
   #ifdef WAGGSTER_MOD_WIRING
-    #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+    #define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
   #else
     #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
   #endif
@@ -1095,7 +1095,7 @@
     #define eSteps 335   //MATRIX
 #endif
 #ifdef TITAN
-    #define eSteps 409   //STOCK
+    #define eSteps 431   //STOCK
 #endif
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.13, 80.18, 402.5, eSteps }
 
@@ -1144,7 +1144,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define CLASSIC_JERK
+// #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 8.0
   #define DEFAULT_YJERK 8.0
@@ -1774,8 +1774,8 @@
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 #ifdef BLTOUCH
-  //#define AUTO_BED_LEVELING_UBL
-  #define AUTO_BED_LEVELING_BILINEAR
+  #define AUTO_BED_LEVELING_UBL
+  //#define AUTO_BED_LEVELING_BILINEAR
 #else
   #ifdef TOUCH_MI_PROBE
   #define AUTO_BED_LEVELING_BILINEAR
